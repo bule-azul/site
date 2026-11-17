@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "title": "Bule Azul: order your coffee ahead and skip the queue",
+    "description": "Order through the Bule Azul app and pick up your coffee at the counter, no queue."
+  },
+  "nav": {
+    "brandLabel": "Bule Azul, home",
+    "label": "Sections",
+    "how": "How it works",
+    "plans": "Plans",
+    "faq": "FAQ"
+  },
+  "lang": {
+    "label": "Language"
+  },
+  "hero": {
+    "tag": "New: rapadura cold brew",
+    "title": "Your coffee at the rigth time, no queue.",
+    "lead": "Order through the Bule Azul app, pick a pickup time and swing by the counter: your coffee comes out hot, in the size and with the milk you asked for.",
+    "download": "Get the app",
+    "seeHow": "See how it works",
+    "statsLabel": "Bule Azul in numbers",
+    "stat1": "<strong>30+</strong> drinks on the menu",
+    "stat2": "<strong>4.9</strong> average rating",
+    "stat3": "<strong>3 min</strong> wait at the counter"
+  },
+  "how": {
+    "title": "How it works",
+    "step1": { "title": "Pick from the menu", "text": "Espresso, fresh drip, cappuccino and over 30 more drinks, with plant-based milk at no extra charge." },
+    "step2": { "title": "Pay in the app", "text": "Pix or card. Your order joins the barista's queue as soon as the payment is confirmed." },
+    "step3": { "title": "Skip the queue", "text": "We let you know when it is ready. Just stop by the counter, say your name and go." }
+  },
+  "tip": {
+    "title": "Barista tip",
+    "text": "Drip coffee tastes best with water between 90 °C and 96 °C (194 to 205 °F): switch the kettle off as soon as it boils and wait a minute before pouring. Boiling water scorches the grounds and turns the drink bitter. Use two tablespoons of grounds for every cup."
+  },
+  "plans": {
+    "title": "Plans",
+    "single": {
+      "title": "Pay as you go",
+      "price": "R$ 0",
+      "perk1": "No monthly fee",
+      "perk2": "Points on every order",
+      "perk3": "Full menu",
+      "cta": "Start now"
+    },
+    "club": {
+      "badge": "Most popular",
+      "title": "Bule Club",
+      "price": "R$ 49.90<span>/month</span>",
+      "perk1": "One drip coffee a day",
+      "perk2": "10% off the rest of the menu",
+      "perk3": "Seasonal beans at home every month",
+      "cta": "Join the club"
+    }
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": { "question": "Can I schedule my pickup?", "answer": "Yes. Choose the time when you place the order and it will be ready right when you said." },
+    "q2": { "question": "Is there a lactose-free option?", "answer": "Yes: lactose-free, oat or almond milk, at no extra charge." },
+    "q3": { "question": "Do you deliver?", "answer": "We deliver within 3 km of the counter, from 7 am to 7 pm, with your coffee in a thermal pack." }
+  },
+  "footer": {
+    "feedback": "Spotted something odd? Tell us with the feedback button in the corner of the screen.",
+    "fine": "Demo site: Bule Azul is a fictional product."
+  }
+}

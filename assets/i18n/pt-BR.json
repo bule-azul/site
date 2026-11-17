@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "title": "Bule Azul: peça seu café antes e retire sem fila",
+    "description": "Peça pelo app do Bule Azul e retire seu café no balcão, sem fila."
+  },
+  "nav": {
+    "brandLabel": "Bule Azul, início",
+    "label": "Seções",
+    "how": "Como funciona",
+    "plans": "Planos",
+    "faq": "Dúvidas"
+  },
+  "lang": {
+    "label": "Idioma"
+  },
+  "hero": {
+    "tag": "Novo: cold brew com rapadura",
+    "title": "Seu café do jetio certo, sem fila.",
+    "lead": "Peça pelo app do Bule Azul, escolha a hora de retirar e passe no balcão: seu café sai quentinho, do tamanho e com o leite que você pediu.",
+    "download": "Baixar o app",
+    "seeHow": "Ver como funciona",
+    "statsLabel": "Números do Bule Azul",
+    "stat1": "<strong>30+</strong> bebidas no cardápio",
+    "stat2": "<strong>4,9</strong> de nota média",
+    "stat3": "<strong>3 min</strong> de espera no balcão"
+  },
+  "how": {
+    "title": "Como funciona",
+    "step1": { "title": "Escolha no cardápio", "text": "Espresso, coado na hora, cappuccino e mais de 30 bebidas, com leite vegetal sem custo extra." },
+    "step2": { "title": "Pague pelo app", "text": "Pix ou cartão. O pedido entra na fila da barista assim que o pagamento é confirmado." },
+    "step3": { "title": "Retire sem fila", "text": "Avisamos quando estiver pronto. É só passar no balcão, dizer seu nome e levar." }
+  },
+  "tip": {
+    "title": "Dica da barista",
+    "text": "Café coado fica melhor com água entre 90 °C e 96 °C: desligue a chaleira assim que ferver e espere um minuto antes de despejar. Água fervendo queima o pó e deixa a bebida amarga. Use duas colheres de sopa de pó para cada xícara."
+  },
+  "plans": {
+    "title": "Planos",
+    "single": {
+      "title": "Avulso",
+      "price": "R$ 0",
+      "perk1": "Sem mensalidade",
+      "perk2": "Pontos a cada pedido",
+      "perk3": "Cardápio completo",
+      "cta": "Começar agora"
+    },
+    "club": {
+      "badge": "Mais escolhido",
+      "title": "Clube do Bule",
+      "price": "R$ 49,90<span>/mês</span>",
+      "perk1": "Um café coado por dia",
+      "perk2": "10% de desconto no resto do cardápio",
+      "perk3": "Grãos da estação em casa todo mês",
+      "cta": "Entrar no clube"
+    }
+  },
+  "faq": {
+    "title": "Dúvidas",
+    "q1": { "question": "Posso agendar a retirada?", "answer": "Pode. Escolha o horário no pedido e ele fica pronto na hora marcada." },
+    "q2": { "question": "Tem opção sem lactose?", "answer": "Tem: leite sem lactose, de aveia ou de amêndoas, sem custo extra." },
+    "q3": { "question": "Vocês entregam?", "answer": "Entregamos num raio de 3 km do balcão, das 7h às 19h, com o café em embalagem térmica." }
+  },
+  "footer": {
+    "feedback": "Encontrou algo estranho? Conte para a gente pelo botão de feedback no canto da tela.",
+    "fine": "Site de demonstração: o Bule Azul é um produto fictício."
+  }
+}
