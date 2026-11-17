@@ -1,0 +1,13 @@
+{
+  "name": "bule-azul-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bule Azul: a fictional neighbourhood cafe site, the public demo target of Alpha Tester.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node scripts/i18n-check.mjs",
+    "i18n": "node scripts/i18n-pages.mjs"
+  }
+}
