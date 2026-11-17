@@ -1,0 +1,484 @@
+/* Demo site of the local cycle: neo-brutalist and playful. Cream page, near-black ink, one saturated block per
+   section, hard offset shadows with no blur. Mobile first (360px up); every pair of colors passes AA except the
+   "Dica da barista" block, which is the deliberate low-contrast defect.
+   Element rules stay inside the page's own regions (.topbar, main, .footer): the feedback widget renders into this
+   document too, and a bare h2 or :focus-visible rule here would restyle its panel. The regions go in :where(), which
+   adds no specificity, so a class rule such as .btn-ink still beats an element rule such as `a`. */
+
+:root {
+  --cream: #fff7e8;
+  --ink: #111;
+  --yellow: #ffd23f;
+  --pink: #ff6b9d;
+  --mint: #3ddc97;
+  --blue: #4d96ff;
+  --white: #fff;
+  --border: 3px solid var(--ink);
+  --shadow: 4px 4px 0 var(--ink);
+  --shadow-lifted: 6px 6px 0 var(--ink);
+  --radius: 8px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+:where(main) :is(h1, h2, h3) {
+  margin: 0 0 0.5em;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+:where(main) h1 {
+  font-size: clamp(2.4rem, 9vw, 4.6rem);
+}
+
+:where(main) h2 {
+  font-size: clamp(1.9rem, 6vw, 2.8rem);
+}
+
+:where(main) h3 {
+  font-size: 1.3rem;
+}
+
+:where(.topbar, main, .footer) a {
+  color: inherit;
+}
+
+:where(.topbar, main, .footer) :focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* ── Top bar ─────────────────────────────────────────────────────────── */
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: var(--border);
+  background: var(--cream);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  padding: 3px;
+  border: var(--border);
+  border-radius: var(--radius);
+  background: var(--mint);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.brand-mark path {
+  fill: var(--blue);
+  stroke: var(--ink);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.brand-mark path + path {
+  fill: none;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font-weight: 700;
+}
+
+.nav a {
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+.nav a:hover {
+  border-bottom-color: var(--ink);
+}
+
+/* ── Section blocks ──────────────────────────────────────────────────── */
+
+main {
+  display: grid;
+  gap: 28px;
+  padding: 28px 16px 40px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.block {
+  padding: 28px 20px;
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.block-yellow {
+  background: var(--yellow);
+}
+
+.block-mint {
+  background: var(--mint);
+}
+
+.block-pink {
+  background: var(--pink);
+}
+
+.block-blue {
+  background: var(--blue);
+}
+
+/* ── Hero ────────────────────────────────────────────────────────────── */
+
+.tag {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 4px 10px;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: var(--white);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lead {
+  max-width: 36em;
+  margin: 0 0 24px;
+  font-size: 1.15rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.stats {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stats li {
+  padding: 10px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: var(--cream);
+  font-weight: 600;
+}
+
+.stats strong {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-lifted);
+}
+
+.btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.btn-ink {
+  background: var(--ink);
+  color: var(--white);
+  box-shadow: 4px 4px 0 var(--white), 4px 4px 0 3px var(--ink);
+}
+
+.btn-ink:hover {
+  box-shadow: 6px 6px 0 var(--white), 6px 6px 0 3px var(--ink);
+}
+
+.btn-ink:active {
+  box-shadow: 0 0 0 var(--white);
+}
+
+.btn-light {
+  background: var(--white);
+  color: var(--ink);
+}
+
+.cta {
+  animation: bounce 2.4s ease-in-out infinite;
+}
+
+.cta:hover,
+.cta:active {
+  animation: none;
+}
+
+@keyframes bounce {
+  0%,
+  70%,
+  100% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-6px);
+  }
+  90% {
+    transform: translateY(0);
+  }
+  95% {
+    transform: translateY(-2px);
+  }
+}
+
+/* ── Cards ───────────────────────────────────────────────────────────── */
+
+.cards {
+  display: grid;
+  gap: 18px;
+}
+
+.card {
+  position: relative;
+  padding: 20px;
+  border: var(--border);
+  border-radius: var(--radius);
+  background: var(--cream);
+  box-shadow: var(--shadow);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.card:hover {
+  transform: rotate(-1deg) translate(-2px, -2px);
+  box-shadow: var(--shadow-lifted);
+}
+
+.card p {
+  margin: 0;
+}
+
+.step {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 12px;
+  border: var(--border);
+  border-radius: 50%;
+  background: var(--yellow);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.pricing ul {
+  margin: 0 0 20px;
+  padding-left: 1.2em;
+}
+
+.pricing li {
+  margin-bottom: 4px;
+}
+
+.price {
+  margin: 0 0 12px !important;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.price span {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card-featured {
+  background: var(--yellow);
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  right: 16px;
+  margin: 0 !important;
+  padding: 2px 10px;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: var(--white);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* ── Tip of the week ─────────────────────────────────────────────────── */
+/* Deliberate defect: pale text straight on the cream page, far below AA. A tester should notice it. */
+
+.tip {
+  padding: 8px 20px;
+  color: #b3a994; /* about 2:1 on the cream: readable with effort, like a real slip, far below AA's 4.5:1 */
+}
+
+.tip h2 {
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+}
+
+.tip p {
+  max-width: 44em;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ── FAQ ─────────────────────────────────────────────────────────────── */
+
+.faq {
+  display: grid;
+  gap: 14px;
+}
+
+.faq summary {
+  font-weight: 800;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.faq details[open] summary {
+  margin-bottom: 8px;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────── */
+
+.footer {
+  padding: 24px 16px 96px; /* room for the feedback button in the corner */
+  border-top: var(--border);
+  text-align: center;
+  font-weight: 600;
+}
+
+.footer p {
+  margin: 0 0 6px;
+}
+
+.fine {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.widget-status {
+  display: inline-block;
+  margin-top: 12px !important;
+  padding: 8px 12px;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: var(--yellow);
+}
+
+/* ── Wider screens ───────────────────────────────────────────────────── */
+
+@media (min-width: 720px) {
+  .topbar {
+    padding: 18px 32px;
+  }
+
+  main {
+    gap: 40px;
+    padding: 40px 32px 56px;
+  }
+
+  .block {
+    padding: 44px 40px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pricing {
+    grid-template-columns: repeat(2, minmax(0, 360px));
+  }
+}
+
+/* ── No motion when the reader asks for none ─────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  :where(.topbar, main, .footer) *,
+  :where(.topbar, main, .footer) *::before,
+  :where(.topbar, main, .footer) *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .btn:hover,
+  .btn:active,
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* ── Language switch ─────────────────────────────────────────────────── */
+
+.topbar .lang {
+  display: flex;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.topbar .lang a[aria-current="page"] {
+  border-bottom-color: var(--ink);
+}
