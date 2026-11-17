@@ -1,4 +1,4 @@
-/* Demo site of the local cycle: neo-brutalist and playful. Cream page, near-black ink, one saturated block per
+/* Bule Azul: neo-brutalist and playful. Cream page, near-black ink, one saturated block per
    section, hard offset shadows with no blur. Mobile first (360px up); every pair of colors passes AA except the
    "Dica da barista" block, which is the deliberate low-contrast defect.
    Element rules stay inside the page's own regions (.topbar, main, .footer): the feedback widget renders into this

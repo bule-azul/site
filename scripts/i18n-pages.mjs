@@ -6,7 +6,7 @@ import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const SITE = 'https://bule-azul.pages.dev/';
+const SITE = 'https://demo.alphatester.app/';
 const PREFIX = { 'pt-BR': '', en: 'en/' };
 
 const dict = (loc) => JSON.parse(readFileSync(`${root}assets/i18n/${loc}.json`, 'utf8'));
