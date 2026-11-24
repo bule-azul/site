@@ -1,0 +1,7 @@
+# Worker with static assets. The name must match the Worker that serves the
+# site on Cloudflare; the owner confirms it.
+name = "bule-azul-site"
+compatibility_date = "2026-11-24"
+
+[assets]
+directory = "./dist"
