@@ -37,7 +37,16 @@ npm run check    # both locale files have the same keys
 
 ## Deploy
 
-Cloudflare Pages deploys the site on every merge to `main`, with no build command and the output directory set to `/` (the repository root).
+The site is deployed by `.github/workflows/deploy.yml` on every push to `main` (and on demand). The workflow runs the tests, runs `npm run build` (which copies the deployable files into `dist/` and injects the widget key), and publishes `dist/` to Cloudflare with `wrangler deploy` (`wrangler.toml`).
+
+- The widget's publishable key is the repository **variable** `ALPHA_T_PUBLIC_KEY` (Settings > Secrets and variables > Actions > Variables). The page in the repository only carries the placeholder `__ALPHA_T_PUBLIC_KEY__`; the build refuses an empty value, a value that does not start with `at_pub_`, and any `at_sec_` value. The repository never contains a key: a pull request that adds one is wrong by definition.
+- Cloudflare credentials are the repository **secrets** `CLOUDFLARE_API_TOKEN` (a token with Workers Scripts edit on the account) and `CLOUDFLARE_ACCOUNT_ID`.
+- The Cloudflare git-connected build must be disconnected in the Cloudflare dashboard, so that only the workflow deploys.
+- To preview the built site locally: `ALPHA_T_PUBLIC_KEY=at_pub_example npm run build`, then serve `dist/`.
+
+## Agent access
+
+`.mcp.json` registers the Alpha Tester MCP server (`at-mcp`) for coding agents. `ALPHA_T_API_KEY` is read from the developer's own shell environment and is never stored in the repository.
 
 ## License
 
@@ -79,4 +88,12 @@ Verificações: `npm test` e `npm run check` (Node 22 ou mais novo, sem dependê
 
 ## Publicação
 
-O Cloudflare Pages publica o site a cada merge na `main`, sem comando de build e com o diretório de saída `/` (a raiz do repositório).
+O site é publicado pelo `.github/workflows/deploy.yml` a cada push na `main` (e sob demanda). O workflow roda os testes, roda `npm run build` (que copia os arquivos publicáveis para `dist/` e injeta a chave do widget) e publica `dist/` no Cloudflare com `wrangler deploy` (`wrangler.toml`).
+
+- A chave pública do widget é a **variável** de repositório `ALPHA_T_PUBLIC_KEY` (Settings > Secrets and variables > Actions > Variables). A página no repositório traz só o marcador `__ALPHA_T_PUBLIC_KEY__`. O repositório nunca contém uma chave: um pull request que adicione uma está errado por definição.
+- As credenciais do Cloudflare são os **secrets** `CLOUDFLARE_API_TOKEN` (token com Workers Scripts edit na conta) e `CLOUDFLARE_ACCOUNT_ID`.
+- O build conectado ao git no painel do Cloudflare precisa ser desconectado, para que só o workflow publique.
+
+## Acesso para agentes
+
+O `.mcp.json` registra o servidor MCP do Alpha Tester (`at-mcp`) para agentes de código. A `ALPHA_T_API_KEY` vem do ambiente do shell de quem desenvolve e nunca fica no repositório.
